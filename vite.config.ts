@@ -4,8 +4,8 @@ import honox from "honox/vite";
 import { defineConfig } from "vite";
 
 import type { UserConfig } from "vite";
-import "dotenv/config"
-import path from "node:path"
+import "dotenv/config";
+import path from "node:path";
 
 const common: UserConfig = {
   server: {
@@ -17,16 +17,16 @@ const common: UserConfig = {
     rollupOptions: {
       input: ["./app/server.ts"],
       output: {
-        assetFileNames: "static/css/[name].[ext]"
+        assetFileNames: "static/css/[name].[ext]",
       },
     },
   },
   resolve: {
     alias: {
-      "@": path.resolve(__dirname, "./app")
-    }
-  }
-}
+      "@": path.resolve(__dirname, "./app"),
+    },
+  },
+};
 
 export default defineConfig({
   ...common,
