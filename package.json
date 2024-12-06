@@ -5,7 +5,11 @@
     "dev": "vite",
     "build": "vite build --mode client && vite build",
     "preview": "wrangler pages dev",
-    "deploy": "npm run build && wrangler pages deploy"
+    "deploy": "npm run build && wrangler pages deploy",
+    "prepare": "husky",
+    "lint": "biome lint .",
+    "format": "biome format --fix .",
+    "lint-staged": "lint-staged"
   },
   "private": true,
   "dependencies": {
@@ -13,10 +17,17 @@
     "honox": "^0.1.27"
   },
   "devDependencies": {
+    "@atolycs/biome-config": "^0.1.0",
     "@cloudflare/workers-types": "^4.20240529.0",
     "@hono/vite-build": "^1.0.0",
     "@hono/vite-dev-server": "^0.16.0",
+    "dotenv": "^16.4.7",
+    "husky": "^9.1.7",
+    "lint-staged": "^15.2.10",
     "vite": "^5.2.12",
     "wrangler": "^3.57.2"
+  },
+  "lint-staged": {
+    "./app/**/*.{tsx,ts}": ["biome format --fix ."]
   }
 }
