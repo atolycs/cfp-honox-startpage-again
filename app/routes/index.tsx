@@ -46,10 +46,15 @@ export const POST = createRoute(async (c) => {
 export default createRoute((c) => {
   const name = c.req.query("name") ?? "Hono";
   return c.render(
-    <div>
-      <h1>Hello, {name}!</h1>
-      <SearchBar placeholder="Type here" />
-      <Counter />
+    <div class="wrapper">
+      <div class="bg"></div>
+      <div class="maincard">
+        <main>
+          <h1>Hello, {name}!</h1>
+          <SearchBar placeholder="Type here" />
+          <Counter />
+        </main>
+      </div>
     </div>,
     { title: name },
   );

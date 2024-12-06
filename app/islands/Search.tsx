@@ -2,7 +2,7 @@ import type { Context, FC } from "hono/jsx";
 
 export const SearchBar: FC<{ placeholder: string }> = ({ placeholder }) => {
   return (
-    <div className="search_bar">
+    <div class="search_bar">
       <form method="post">
         <label for="search_box" autofocus>
           &gt; find /&nbsp;
