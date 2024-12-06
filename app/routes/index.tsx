@@ -1,6 +1,7 @@
 import { css } from "hono/css";
 import { createRoute } from "honox/factory";
 import Counter from "@/islands/counter";
+import { SearchBar } from "@/islands/Search";
 
 export const POST = createRoute(async (c) => {
   console.log();
@@ -45,8 +46,9 @@ export const POST = createRoute(async (c) => {
 export default createRoute((c) => {
   const name = c.req.query("name") ?? "Hono";
   return c.render(
-    <div class={className}>
+    <div>
       <h1>Hello, {name}!</h1>
+      <SearchBar placeholder="Type here" />
       <Counter />
     </div>,
     { title: name },
